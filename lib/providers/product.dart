@@ -34,7 +34,7 @@ class Product with ChangeNotifier {
     notifyListeners();
     // final url =
     //     'https://flutter-update.firebaseio.com/userFavorites/$userId/$id.json?auth=$token';
-    final url = Uri.parse('https://udemy-shop-app-3aa84-default-rtdb.firebaseio.com/userFavorites/$userId/$id.json?auth=$token');
+    final url = Uri.parse('https://udemy-shop-app-xxxx-default-rtdb.firebaseio.com/userFavorites/$userId/$id.json?auth=$token');
     try {
       final response = await http.put(
         url,
