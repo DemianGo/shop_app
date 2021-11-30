@@ -16,6 +16,7 @@ This projects uses packages:
   http: ^0.13.3<br>
   shared_preferences: ^2.0.7<br>
   
+  Also Firebase !
   
   <br><br>
 Any doubts don't hesitate in mailling me at: demianescobar@gmail.com
