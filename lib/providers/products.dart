@@ -79,7 +79,7 @@ class Products with ChangeNotifier {
   Future<void> updateProv(String authToken, String userId) async {
     print('aqui é UPDATEPROV');
     var url = Uri.parse(
-        'https://udemy-shop-app-3aa84-default-rtdb.firebaseio.com/products.json?auth=$authToken');
+        'https://udemy-shop-app-xxxx-default-rtdb.firebaseio.com/products.json?auth=$authToken');
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -87,7 +87,7 @@ class Products with ChangeNotifier {
         return;
       }
       url = Uri.parse(
-          'https://udemy-shop-app-3aa84-default-rtdb.firebaseio.com/userFavorites/$userId.json?auth=$authToken');
+          'https://udemy-shop-app-xxxx-default-rtdb.firebaseio.com/userFavorites/$userId.json?auth=$authToken');
       final favoriteResponse = await http.get(url);
       final favoriteData = json.decode(favoriteResponse.body);
       final List<Product> loadedProducts = [];
@@ -129,7 +129,7 @@ class Products with ChangeNotifier {
     final filterString =
         filterByUser ? 'orderBy="creatorId"&equalTo="$userId2"' : '';
     var url = Uri.parse(
-        'https://udemy-shop-app-3aa84-default-rtdb.firebaseio.com/products.json?auth=$authToken2&$filterString');
+        'https://udemy-shop-app-xxxxx-default-rtdb.firebaseio.com/products.json?auth=$authToken2&$filterString');
     try {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -139,7 +139,7 @@ class Products with ChangeNotifier {
         return;
       }
       url = Uri.parse(
-          'https://udemy-shop-app-3aa84-default-rtdb.firebaseio.com/userFavorites/$userId2.json?auth=$authToken2');
+          'https://udemy-shop-app-xxxx-default-rtdb.firebaseio.com/userFavorites/$userId2.json?auth=$authToken2');
       final favoriteResponse = await http.get(url);
       final favoriteData = json.decode(favoriteResponse.body);
       final List<Product> loadedProducts = [];
@@ -179,7 +179,7 @@ class Products with ChangeNotifier {
     }
 
     final url = Uri.parse(
-        'https://udemy-shop-app-3aa84-default-rtdb.firebaseio.com/products.json?auth=$authToken2');
+        'https://udemy-shop-app-xxxx-default-rtdb.firebaseio.com/products.json?auth=$authToken2');
 
     try {
       final response = await http.post(
@@ -228,7 +228,7 @@ class Products with ChangeNotifier {
     final prodIndex = _items.indexWhere((prod) => prod.id == id);
     if (prodIndex >= 0) {
       final url = Uri.parse(
-          'https://udemy-shop-app-3aa84-default-rtdb.firebaseio.com/products/$id.json?auth=$authToken2');
+          'https://udemy-shop-app-xxxx-default-rtdb.firebaseio.com/products/$id.json?auth=$authToken2');
 
       await http.patch(url,
           body: json.encode({
@@ -263,7 +263,7 @@ class Products with ChangeNotifier {
     // final url =
     //     'https://flutter-update.firebaseio.com/products/$id.json?auth=$authToken';
     final url = Uri.parse(
-        'https://udemy-shop-app-3aa84-default-rtdb.firebaseio.com/products/$id.json?auth=$authToken2');
+        'https://udemy-shop-app-xxxx-default-rtdb.firebaseio.com/products/$id.json?auth=$authToken2');
     final existingProductIndex = _items.indexWhere((prod) => prod.id == id);
     var existingProduct = _items[existingProductIndex];
     _items.removeAt(existingProductIndex);
