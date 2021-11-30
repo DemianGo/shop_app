@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/example/udemy_shop_app_provider/BuildConfig.java
+ com.example.udemy_shop_app_provider.BuildConfig
