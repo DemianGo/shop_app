@@ -32,10 +32,10 @@ class Auth with ChangeNotifier {
 
   Future<void> _authenticate(String email, String password, String urlSegment) async {
     final url = Uri.parse(
-        'https://identitytoolkit.googleapis.com/v1/accounts:$urlSegment?key=AIzaSyBIVRWi669wOZ0siPFpsBKeYNJocvgdJ4o');
+        'https://identitytoolkit.googleapis.com/v1/accounts:$urlSegment?key=AIzaSyxxxxxxxxxxxxsBKeYNJocvgdJ4o');
 
     // final url =
-    //     'https://www.googleapis.com/identitytoolkit/v3/relyingparty/$urlSegment?key=AIzaSyC13spCwP_f_SalxEbkB-wjedoF8iYENlQ';
+    //     'https://www.googleapis.com/identitytoolkit/v3/relyingparty/$urlSegment?key=AIzxxxxxxxxxxxxEbkB-wjedoF8iYENlQ';
     try {
       final response = await http.post(
         url,
@@ -129,6 +129,6 @@ class Auth with ChangeNotifier {
       _authTimer.cancel();
     }
     final timeToExpiry = _expiryDate.difference(DateTime.now()).inSeconds;
-    _authTimer = Timer(Duration(seconds: 5/*timeToExpiry*/), logout);
+    _authTimer = Timer(Duration(seconds: timeToExpiry), logout);
   }
 }
